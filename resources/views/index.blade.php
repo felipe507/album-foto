@@ -87,7 +87,7 @@ var_dump($posts);
                         <div class="btn-group">
                           <!--button type="button" class="btn btn-sm btn-outline-secondary">Download</button-->
                           <a type="button" class="btn btn-sm btn-outline-secondary" href="#">Download</a>
-                          <form>
+                          <form action="/{{$post->id}}" method="post" >
                             @csrf
                             <input type="hidden" name="_method" value="delete">
                             <button type="submit" class="btn btn-sm btn-outline-danger">Apagar</button>

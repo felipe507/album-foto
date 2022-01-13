@@ -15,6 +15,7 @@ use App\Http\Controllers\PostController;
 
 Route::get('/', [PostController::class , 'index']);
 Route::post('/', [PostController::class , 'store']);
+Route::delete('/{id}', [PostController::class , 'destroy']);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
