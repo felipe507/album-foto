@@ -1,3 +1,7 @@
+<?php
+var_dump($posts);
+
+?>
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -69,15 +73,16 @@
       </section>
 
       <div class="album py-5 bg-light">
+
         <div class="container">
           <div class="row">
-
+            @foreach ($posts as $post )
                 <div class="col-md-4">
                   <div class="card mb-4 shadow-sm">
                     <img class="card-img-top figure-img img-fluid rounded" src="">
                     <div class="card-body">
-                      <p class="card-text">email@dominio.com</p>
-                      <p class="card-text">Mensagem referente a imagem</p>
+                      <p class="card-text">{{ $post->email }}</p>
+                      <p class="card-text">{{ $post->mensagem }}</p>
                       <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                           <!--button type="button" class="btn btn-sm btn-outline-secondary">Download</button-->
@@ -92,9 +97,10 @@
                     </div>
                   </div>
                 </div>
-
+                @endforeach
           </div>
         </div>
+
       </div>
 
     </main>

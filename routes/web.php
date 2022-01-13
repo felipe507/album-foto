@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PostController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,10 +13,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
+Route::get('/', [PostController::class , 'index']);
+Route::post('/', [PostController::class , 'store']);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
