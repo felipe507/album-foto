@@ -38,7 +38,8 @@ class PostController extends Controller
         $post = new Post();
         $post->email = $request->email;
         $post->mensagem = $request->mensagem;
-        $post->arquivo = '';//$request->arquivo;
+        $patch = $request->file('arquivo')->store('imagens', 'public');
+        $post->arquivo = $patch;
         $post->save();
         return redirect('/');
     }
